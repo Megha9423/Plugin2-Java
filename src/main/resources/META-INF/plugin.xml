@@ -1,0 +1,61 @@
+<idea-plugin>
+    <id>com.amazon.plugin2.Plugin2-Java</id>
+    <name>Stack Overflow Plugin for IntelliJ</name>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+<!--    &lt;!&ndash; uncomment to enable plugin in all products-->
+<!--    <depends>com.intellij.modules.lang</depends>-->
+<!--    &ndash;&gt;-->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="MyPlugin.SampleMenu" text="Gordian Knot" description="Greeting menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="Myplugin.Textboxes" class="HelloAction" text="Resolve conflicts" description="Says hello"/>
+        </group>
+        <group id="MyPlugin.ToolsMenu" text="Stack Overflow Tools" description="Greeting menu">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action id="StackOverflow.AskQuestion.ToolsMenu"
+                    class="AskQuestionAction"
+                    text="Ask Question on Stack Overflow"
+                    icon="so-icon-16x16.png"
+                    description="Ask a Question on Stack Overflow">
+            </action>
+        </group>
+
+        <!-- Add action to search Stack Overflow from file editor -->
+        <group id="MyPlugin.EditorPopupMenu" text="Stack Overflow Editor Pop-up" description="Greeting menu">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <action id="StackOverflow.Search.Editor"
+                    class="SearchAction"
+                    text="Search on Stack Overflow"
+                    icon="so-icon-16x16.png"
+                    description="Search on Stack Overflow">
+            </action>
+        </group>
+
+        <!-- Add action to search Stack Overflow from console editor -->
+        <group id="MyPlugin.ConsoleEditorPopupMenu" text="Stack Overflow Console Editor" description="Greeting menu">
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="last"/>
+            <action id="StackOverflow.Search.Console"
+                    class="SearchAction"
+                    text="Search on Stack Overflow"
+                    icon="so-icon-16x16.png"
+                    description="Search on Stack Overflow">
+            </action>
+        </group>
+
+    </actions>
+
+</idea-plugin>
